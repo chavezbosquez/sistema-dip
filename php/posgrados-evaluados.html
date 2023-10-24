@@ -1,0 +1,33 @@
+<p class="m-3"></p>
+<table class="table table-striped table-bordered table-hover text-center">
+        <thead class="table-primary">
+          <th>Posgrado</th>
+          <th>División</th>
+          <th>Inicio de la evaluación</th>
+          <th>Fin de la evaluación</th>
+          <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            require_once 'php/posgrado.php';
+            $listaEnEvaluacion = Posgrado::getPosgradosEvaluados();
+            foreach ($listaEnEvaluacion as $registro) {
+              extract($registro);
+              echo('<tr>');
+              echo("<td class='text-start'>{$referencia} - {$nombre}</td>");
+              echo("<td class='fw-bold'>{$division_id}</td>");
+              echo("<td>{$fecha_inicio}</td>");
+              echo("<td>{$fecha_fin}</td>");
+              echo("<td>
+                <button type='button' title='Datos generales del programa {$acronimo}' class='pt-0 pb-0 me-1' data-bs-toggle='modal' data-bs-target='#ventana-modal' data-bs-nombre='{$nombre}' data-bs-url='ver-detalles-posgrado.php?posgrado_id={$posgrado_id}' data-bs-tamanho='510px'>🛈</button>
+                <button type='button' title='Conclusión de la evaluación {$evaluacion_id}' class='fw-bold pt-0 pb-0' data-bs-toggle='modal' data-bs-target='#ventana-modal' data-bs-nombre='Evaluación: {$nombre}' data-bs-url='ver-detalles-revision.php?evaluacion_id={$evaluacion_id}' data-bs-tamanho='600px'><i class='bi bi-award'></i></button>
+                </td>");
+              echo("</tr>");
+            }
+            if ( empty($listaEnEvaluacion) ) {
+              echo("<tr><td colspan='5' class='text-start'>Aún no hay posgrados evaluados.</td></tr>");
+            }
+          ?>
+        </tbody>
+      </table>

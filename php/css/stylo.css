@@ -1,0 +1,72 @@
+/* Estilos globales */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background-image: url("../img/fondo.png");
+  /*background-repeat: no-repeat;
+  background-position: center;*/
+  background-size: cover;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal !important;
+}
+
+.jumbotron {
+  padding: 20px;
+  background: white;
+  margin-bottom: 30px;
+  height: 140px;
+}
+
+.jumbotron .escudo {
+  background-image: url("../img/escudo.png");
+  background-size: contain;
+  height: 100px;
+  background-repeat: no-repeat;
+  float: left;
+  width: 50%;
+}
+
+.jumbotron .dip {
+  height: 100px;
+  background-image: url("../img/dip.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  float:right;
+  display: inline;
+  width: 50%;
+}
+
+.footer {
+  height: 30px;
+  line-height: 30px;
+  background: white;
+}
+
+#main {
+  padding: 20px;
+}
+
+.reset-fieldset {
+  all: revert;
+}
+
+/*.boton {
+  background-color: #bbb;
+}*/
+
+/*table tr td {
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 5px;
+}
+
+table i {
+  color: #333;
+}*/
+
+
+
